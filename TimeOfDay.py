@@ -1,4 +1,6 @@
-TimeOfDay.py
+#TimeOfDay.py
+#Author : Ekta Grover , 17th Jan 2014
+
 #time > [00:6:00: early morning, 6:00-12:00 morning 12:00-6:00 afternoon 6:00 night]
 
 import datetime
