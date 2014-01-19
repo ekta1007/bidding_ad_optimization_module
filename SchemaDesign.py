@@ -3,6 +3,7 @@
 #Running the sql bath file from mysql CLI
 tee D:\Desktop\logfile.txt
 source D:\Desktop\script1_PROJECT_NAME.sql
+notee # close the logfile.txt
 
 
 
