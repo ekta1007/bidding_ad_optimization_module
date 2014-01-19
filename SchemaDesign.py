@@ -1,6 +1,7 @@
 #SchemaDesign.py
 
 #Running the sql bath file from mysql CLI
+SHOW FULL PROCESSLIST
 tee D:\Desktop\logfile.txt
 source D:\Desktop\script1_PROJECT_NAME.sql
 notee # close the logfile.txt
