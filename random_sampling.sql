@@ -5,9 +5,15 @@ set @sample= ( select @total*(70/30))  ;
 #@total,@sample
 #4090,9543.333331970
 
-# gGneric syntax 
+# Generic syntax 
 PREPARE STMT FROM 'SELECT * FROM tab_1 ORDER BY RAND() LIMIT ?';
 EXECUTE STMT USING @sample;
+
+# or if I were to store all the (temp) tables along wth the randomization - Inserted "create table clause here"
+PREPARE STMT FROM "CREATE TABLE tab_derived_1 SELECT * FROM tab_1 WHERE predict_var = '4'   or predict_var = '2'  union 
+(SELECT * FROM tab_1 WHERE predict_var = '0' or predict_var = '1' ORDER BY RAND() limit ?  )" ;
+EXECUTE STMT USING @sample;
+
 
 
 PREPARE STMT FROM " SELECT * FROM tab_1 WHERE predict_var = '4' or predict_var = '2'  union 
